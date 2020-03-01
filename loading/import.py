@@ -1,4 +1,5 @@
 import mysql.connector
+import requests
 import sys
 import re
 import json
@@ -53,24 +54,29 @@ def get_primary_key_str(database_name, table_name):
     # columnname: columnameval,
     # tablename: tablenameval,
     # foreignkeycolumnNames: [list of columnnames])
-def send_inverted_index_to_firebase(inverted_index):
-    # TODO
-    pass
+def send_inverted_index_to_firebase(inverted_index, firebase_nodename):
+    firebase_url = FIREBASE_URL + firebase_nodename + "/index.json"
+    x = requests.put(firebase_url, data=json.dumps(inverted_index))
 
 
 # tokenizes a column value. should be delimitted by whitespace and hyphen)
+# also make it lowercase
 def tokenize(value):
     if not type(value) == str:
         return [value]
     values = re.split(r'[-\s]\s*', value)
+    values = [''.join(char for char in string if char.isalnum()) for string in values]
+    values = [str(val).lower() for val in values]
+
     return values
 
 
 # returns an inverted index value object for a given token
 def to_inverted_index_value_obj(foreign_keys, foreign_key_values,
-        foreign_table_vals, primary_keys, primary_key_values, table_name):
+        foreign_table_vals, primary_keys, primary_key_values, table_name, column_name):
     return {"Primary Columns" : primary_keys, "Primary Values": primary_key_values, "Foreign  Columns": foreign_keys  , 
-            "Foreign Values": foreign_key_values, "Foreign Tables": foreign_table_vals, "Table Name": table_name}
+            "Foreign Values": foreign_key_values, "Foreign Tables": foreign_table_vals, "Table Name": table_name,
+            "Column": column_name}
     
 
 def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inverted_index, database_name, table_name):
@@ -104,20 +110,19 @@ def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inver
             column_val = row[index]
             column_values = tokenize(column_val)
             for token in column_values:
+                if token == None or token == "":
+                    continue
                 if token not in inverted_index:
                     inverted_index[token] = []
                 index_obj = to_inverted_index_value_obj(foreign_key_columns, foreign_key_values, foreign_table_vals,
-                    primary_keys, primary_key_values, table_name)
-                print(index_obj)
-                print()
+                    primary_keys, primary_key_values, table_name, column_name)
                 inverted_index[token].append(index_obj)
 
 
 
-
-
 # sends the table to firebase. each item should be keyed by primary key
-def send_table_to_firebase(columns, rows, foreign_keys, primary_keys, inverted_index, database_name, table_name):
+def send_table_to_firebase(columns, rows, foreign_keys, primary_keys, inverted_index,
+        database_name, table_name, firebase_nodename):
     column_list = []
     for column in columns:
         column_list.append(remove_special_chars(column))
@@ -127,12 +132,33 @@ def send_table_to_firebase(columns, rows, foreign_keys, primary_keys, inverted_i
         parsed_row = []
         for item in row:
             if type(item) == Decimal:
-                parsed_row.append(float(item))
+                parsed_row.append(str(float(item)))
             else:
-                parsed_row.append(item)
+                parsed_row.append(str(item))
         parsed_rows.append(parsed_row)
 
     add_rows_to_inverted_index(column_list, parsed_rows, foreign_keys, primary_keys, inverted_index, database_name, table_name)
+
+    table_dict = {}
+    for row in parsed_rows:
+        table_item = {}
+        primary_key_vals = []
+        for index in range(len(column_list)):
+            attribute = row[index]
+            col_val = column_list[index] 
+            table_item[col_val] = attribute
+            if col_val in primary_keys:
+                primary_key_vals.append(attribute)
+        table_primary_key = ' | '.join(primary_key_vals)
+        table_dict[table_primary_key] = table_item
+    
+    firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json"
+    x = requests.put(firebase_url, data=json.dumps(table_dict))
+    print(x.text)
+
+
+
+            
 
 
 def get_table_columns(cursor, database_name, table_name):
@@ -167,9 +193,8 @@ def get_primary_key_columns(cursor, database_name, table_name):
     return primary_key_list
 
 
-
 # cursor has executed table_query_string 
-def add_table_to_firebase(cursor, database_name, table_name, inverted_index):
+def add_table_to_firebase(cursor, database_name, table_name, inverted_index, firebase_nodename):
     table_name = remove_special_chars(table_name)
 
     columns = get_table_columns(cursor, database_name, table_name)
@@ -183,8 +208,8 @@ def add_table_to_firebase(cursor, database_name, table_name, inverted_index):
     primary_keys = get_primary_key_columns(cursor, database_name,  table_name)
     #print(primary_keys)
 
-    send_table_to_firebase(columns, rows, foreign_keys, primary_keys, inverted_index, database_name, table_name)
-    send_inverted_index_to_firebase(inverted_index)
+    send_table_to_firebase(columns, rows, foreign_keys, primary_keys,
+            inverted_index, database_name, table_name, firebase_nodename)
 
 
 # main function. connects to mysql and correct DB.
@@ -203,8 +228,9 @@ def import_databases(args):
     table_names = cursor.fetchall()
 
     for table_name in table_names:
-        add_table_to_firebase(cursor, database_name, table_name, inverted_index)
-        break;
+        add_table_to_firebase(cursor, database_name, table_name, inverted_index, firebase_nodename)
+
+    send_inverted_index_to_firebase(inverted_index, firebase_nodename)
     cnx.close()
 
 
