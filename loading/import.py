@@ -140,6 +140,11 @@ def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inver
                     primary_keys, primary_key_values, table_name, column_name)
                 inverted_index[token].append(index_obj)
 
+def remove_duplicates_from_list(mylist):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in mylist if not (x in seen or seen_add(x))]
+
 # updates firebase database indexing rules
 def update_firebase_indexing_rules(primary_keys, firebase_nodename, table_name):
     data = requests.get(
@@ -161,7 +166,7 @@ def update_firebase_indexing_rules(primary_keys, firebase_nodename, table_name):
     for primary_key in primary_keys:
         indexOn_list.append(primary_key)
 
-
+    indexOn_list = remove_duplicates_from_list(indexOn_list)
     table_rules[".indexOn"] = indexOn_list
     nodename_rules[table_name] =  table_rules
     rules_dict[firebase_nodename] = nodename_rules
