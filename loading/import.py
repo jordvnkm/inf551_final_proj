@@ -9,7 +9,7 @@ from decimal import Decimal
 FIREBASE_URL = "https://inf551-jordankm.firebaseio.com/"
 
 def remove_special_chars(string):
-    return ''.join(e for e in string if e.isalnum())
+    return ''.join(e for e in string if e.isalnum() or e == "_")
 
 
 # returns a string to query the database for its schema
@@ -52,9 +52,30 @@ def get_primary_key_str(database_name, table_name):
     # columnname: columnameval,
     # tablename: tablenameval,
     # foreignkeycolumnNames: [list of columnnames])
-def send_inverted_index_to_firebase(inverted_index, firebase_nodename):
-    firebase_url = FIREBASE_URL + firebase_nodename + "/index.json"
-    x = requests.put(firebase_url, data=json.dumps(inverted_index))
+def send_inverted_index_to_firebase(inverted_index, firebase_nodename, table_name):
+    firebase_url = FIREBASE_URL + firebase_nodename + "/index/" + str(table_name) + ".json"
+    #x = requests.patch(firebase_url, data=json.dumps(inverted_index))
+    #print("sending inverted index")
+    #x = requests.put(firebase_url, data=json.dumps(inverted_index))
+    #print(x)
+    #return
+
+    temp_index = {}
+    for key in inverted_index.keys():
+        temp_index[str(key)] = inverted_index[key]
+        if (sys.getsizeof(temp_index) > 10000):
+            print("Writing index 1")
+            x = requests.patch(firebase_url, data=json.dumps(temp_index))
+            print(x)
+            temp_index.clear()
+
+    if (len(temp_index) > 0):
+        print("writing index 2")
+        x = requests.patch(firebase_url, data=json.dumps(temp_index))
+        print(x)
+
+    #x = requests.put(firebase_url, data=json.dumps(inverted_index))
+    #print(x)
 
 
 # tokenizes a column value. should be delimitted by whitespace and hyphen)
@@ -63,7 +84,7 @@ def tokenize(value):
     if not type(value) == str:
         return [value]
     values = re.split(r'[-\s]\s*', value)
-    values = [''.join(char for char in string if char.isalnum()) for string in values]
+    values = [remove_special_chars(string) for string in values]
     values = [str(val).lower() for val in values]
 
     return values
@@ -72,9 +93,23 @@ def tokenize(value):
 # returns an inverted index value object for a given token
 def to_inverted_index_value_obj(foreign_keys, foreign_key_values,
         foreign_table_vals, primary_keys, primary_key_values, table_name, column_name):
-    return {"Primary Columns" : primary_keys, "Primary Values": primary_key_values, "Foreign  Columns": foreign_keys  , 
-            "Foreign Values": foreign_key_values, "Foreign Tables": foreign_table_vals, "Table Name": table_name,
-            "Column": column_name}
+    obj = {"Table Name": table_name, "Column": column_name}
+#    if (len(foreign_keys) > 0):
+#        obj["Foreign Columns"] = foreign_keys
+#        obj["Foreign Values"] = foreign_key_values
+#        obj["Foreign Tables"] = foreign_table_vals
+
+    if (len(primary_keys) > 0):
+        obj["Primary Columns"] = primary_keys
+        obj["Primary Values"] = primary_key_values
+    else:
+        return None
+    return obj
+
+
+    #return {"Primary Columns" : primary_keys, "Primary Values": primary_key_values, "Foreign  Columns": foreign_keys  , 
+    #        "Foreign Values": foreign_key_values, "Foreign Tables": foreign_table_vals, "Table Name": table_name,
+    #        "Column": column_name}
     
 
 def send_table_schema_to_firebase(firebase_nodename, table_name, primary_keys, foreign_key_columns, foreign_table_vals):
@@ -93,9 +128,9 @@ def send_table_schema_to_firebase(firebase_nodename, table_name, primary_keys, f
             "Foreign table name": foreign_table_val
             })
     table_schema[table_name]["foreign_info"] = foreign_info
+    print("schema request")
     x = requests.patch(firebase_url, data=json.dumps(table_schema, indent=4, separators=(',', ': ')))
     print(x.text)
-
 
 
 def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inverted_index, database_name, table_name, firebase_nodename):
@@ -122,7 +157,6 @@ def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inver
    
     send_table_schema_to_firebase(firebase_nodename, table_name, primary_keys, foreign_key_columns, foreign_table_vals)
 
-
     for row in rows:
         primary_key_values = [row[i] for i in primary_key_columns]
         foreign_key_values = [row[i] for i in foreign_key_indexes]
@@ -132,13 +166,15 @@ def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inver
             column_val = row[index]
             column_values = tokenize(column_val)
             for token in column_values:
-                if token == None or token == "":
-                    continue
-                if token not in inverted_index:
-                    inverted_index[token] = []
                 index_obj = to_inverted_index_value_obj(foreign_key_columns, foreign_key_values, foreign_table_vals,
                     primary_keys, primary_key_values, table_name, column_name)
-                inverted_index[token].append(index_obj)
+                if index_obj is not None:
+                    if token == None or token == "":
+                        continue
+                    if token not in inverted_index:
+                        inverted_index[token] = []
+                    inverted_index[token].append(index_obj)
+
 
 def remove_duplicates_from_list(mylist):
     seen = set()
@@ -147,6 +183,8 @@ def remove_duplicates_from_list(mylist):
 
 # updates firebase database indexing rules
 def update_firebase_indexing_rules(primary_keys, firebase_nodename, table_name):
+    if (len(primary_keys) == 0):
+        return
     data = requests.get(
             'https://inf551-jordankm.firebaseio.com/.settings/rules.json?auth=hfuGYtYULnO7qXd9PcWDnoIQ5kUmvzvPoXfxyJmc')
     data_str = data.text
@@ -155,7 +193,7 @@ def update_firebase_indexing_rules(primary_keys, firebase_nodename, table_name):
     nodename_rules = {}
     if firebase_nodename in rules_dict:
         nodename_rules = rules_dict[firebase_nodename]
-
+    
     table_rules = {}
     if table_name in nodename_rules:
         table_rules  = nodename_rules[table_name]
@@ -178,9 +216,14 @@ def update_firebase_indexing_rules(primary_keys, firebase_nodename, table_name):
 # sends the table to firebase. each item should be keyed by primary key
 def send_table_to_firebase(columns, rows, foreign_keys, primary_keys, inverted_index,
         database_name, table_name, firebase_nodename):
+    #firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json?writeSizeLimit=unlimited"
+    #print("DELETING OLD DATA")
+    #x = requests.delete(firebase_url)
+    #print(x)
     column_list = []
     for column in columns:
-        column_list.append(remove_special_chars(column))
+        col = remove_special_chars(column)
+        column_list.append(col)
 
     parsed_rows = []
     for row in rows:
@@ -195,25 +238,50 @@ def send_table_to_firebase(columns, rows, foreign_keys, primary_keys, inverted_i
     add_rows_to_inverted_index(column_list, parsed_rows, foreign_keys, primary_keys, inverted_index, database_name, table_name, firebase_nodename)
 
     table_dict = {}
+    row_index = 0
     for row in parsed_rows:
         table_item = {}
-        primary_key_vals = []
         for index in range(len(column_list)):
             attribute = row[index]
             col_val = column_list[index] 
             table_item[col_val] = attribute
-            if col_val in primary_keys:
-                primary_key_vals.append(attribute)
-        table_primary_key = ' | '.join(primary_key_vals)
-        table_dict[table_primary_key] = table_item
+
+        table_dict[row_index] = table_item
+        if (sys.getsizeof(table_dict) > 100000):
+            print("sending table1")
+            firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json"
+            x = requests.patch(firebase_url, data=json.dumps(table_dict))
+            print(x)
+            table_dict.clear()
+        row_index += 1
+
+    if (len(table_dict) > 0):
+        print("sending table2")
+        firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json"
+        x = requests.patch(firebase_url, data=json.dumps(table_dict))
+        print(x)
+
+
+    return
     
+    
+    #firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json?writeSizeLimit=unlimited"
     firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json"
+    print("WRITING DATA")
     x = requests.put(firebase_url, data=json.dumps(table_dict))
+    print(x)
+
+    #firebase_url = FIREBASE_URL + firebase_nodename + ".json"
+    #x = requests.put(firebase_url, data=json.dumps({table_name : table_items}))
+    #print(x.text)
     
     update_firebase_indexing_rules(primary_keys, firebase_nodename, table_name)
 
 
-            
+def batch_send_table(firebase_nodename, table_name, table_dict):         
+    firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json"
+    x = requests.put(firebase_url, data=json.dumps(table_dict))
+    print(x.text)
 
 
 def get_table_columns(cursor, database_name, table_name):
@@ -233,6 +301,7 @@ def get_foreign_key_columns(cursor, database_name, table_name):
     foreign_key_list = []
     for row in foreign_keys:
         foreign_key_list.append([remove_special_chars(item) for item in row])
+        #foreign_key_list.append(row)
 
     return foreign_key_list
 
@@ -244,13 +313,11 @@ def get_primary_key_columns(cursor, database_name, table_name):
 
     primary_key_list = []
     for col in primary_keys:
-        primary_key_list.append(remove_special_chars(col))
+        primary_key_list.append(remove_special_chars(col[0]))
     return primary_key_list
 
 # cursor has executed table_query_string 
 def add_table_to_firebase(cursor, database_name, table_name, inverted_index, firebase_nodename):
-    table_name = remove_special_chars(table_name)
-
     columns = get_table_columns(cursor, database_name, table_name)
 
     table_row_query_string = get_table_row_str(database_name, table_name)
@@ -271,7 +338,7 @@ def add_table_to_firebase(cursor, database_name, table_name, inverted_index, fir
 def import_databases(args):
     database_name = args[1]
     firebase_nodename = args[2]
-    inverted_index = {}
+    #inverted_index = {}
     
     cnx = mysql.connector.connect(user='root', password='Kiyoshi6',
                                   host='127.0.0.1', auth_plugin='mysql_native_password')
@@ -282,9 +349,17 @@ def import_databases(args):
     table_names = cursor.fetchall()
 
     for table_name in table_names:
+        table_name = table_name[0]
+#        if table_name != "staff":
+#            print("skipping")
+#            continue
+        inverted_index = {}
         add_table_to_firebase(cursor, database_name, table_name, inverted_index, firebase_nodename)
+        send_inverted_index_to_firebase(inverted_index, firebase_nodename, table_name)
+        #return
 
-    send_inverted_index_to_firebase(inverted_index, firebase_nodename)
+
+    #send_inverted_index_to_firebase(inverted_index, firebase_nodename)
     cnx.close()
 
 

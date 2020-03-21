@@ -4719,3 +4719,556 @@ Processing by QueriesController#show as HTML
 Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/query?database_name=classicmodels&db_query=hi" for ::1 at 2020-03-15 10:01:00 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"hi"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/databases" for ::1 at 2020-03-15 14:23:17 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 428ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=hi+there" for ::1 at 2020-03-15 14:23:23 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"hi there"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-15 14:28:44 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 273ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-15 14:28:53 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 253ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-15 14:32:54 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1331ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-15 14:33:02 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 275ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-16 15:55:24 -0700
+Processing by DatabasesController#show as HTML
+Completed 500 Internal Server Error in 120350ms (ActiveRecord: 0.0ms)
+
+
+
+Net::ReadTimeout - Net::ReadTimeout:
+  app/controllers/databases_controller.rb:9:in `show'
+
+Started POST "/__better_errors/975adfc5708ecf0a/variables" for ::1 at 2020-03-16 15:57:25 -0700
+Started GET "/" for ::1 at 2020-03-16 23:25:43 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5973ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:04:59 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1746ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:06:21 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 302ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:06:54 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 280ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:07:48 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 264ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:08:50 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 457ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:10:04 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 255ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:11:52 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 265ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:12:48 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1323ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-17 11:13:32 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 272ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=hell+o+world" for ::1 at 2020-03-17 11:13:49 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"hell o world"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=hell+o+world" for ::1 at 2020-03-17 11:13:55 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"hell o world"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-18 20:30:23 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 1861ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=hi+there" for ::1 at 2020-03-18 20:30:43 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"hi there"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=hi+there" for ::1 at 2020-03-18 20:50:57 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 331ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `firebase' for #<QueriesController:0x00007fa4bd727d10>:
+  app/controllers/queries_controller.rb:8:in `show'
+
+Started POST "/__better_errors/0244037b0b6b1036/variables" for ::1 at 2020-03-18 20:50:58 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-18 20:51:10 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (269.5ms)
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `database_name' for #<#<Class:0x00007fa4be38f170>:0x00007fa4be39e648>
+Did you mean?  @database_name
+               databases_path:
+  app/views/queries/show.html.erb:1:in `_app_views_queries_show_html_erb___3392512625712514437_70172771448800'
+  app/controllers/queries_controller.rb:11:in `show'
+
+Started POST "/__better_errors/2983c836afe900ae/variables" for ::1 at 2020-03-18 20:51:10 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-18 20:51:22 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-18 20:53:48 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-18 21:14:15 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/queries/show.html.erb:4:in `_app_views_queries_show_html_erb___3392512625712514437_70172495675020'
+  app/controllers/queries_controller.rb:15:in `show'
+
+Started POST "/__better_errors/21464b903d078668/variables" for ::1 at 2020-03-18 21:14:15 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-18 21:15:24 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 1448ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `response_obj' for #<QueriesController:0x00007fa4bdc14da0>
+Did you mean?  response_objc
+               response_body
+               response_code:
+  app/controllers/queries_controller.rb:21:in `get_table_names'
+  app/controllers/queries_controller.rb:10:in `show'
+
+Started POST "/__better_errors/6f33e4f73be8cc8d/variables" for ::1 at 2020-03-18 21:15:26 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-18 21:15:47 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 428ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `response_obj' for #<QueriesController:0x00007fa4bd4ab460>
+Did you mean?  response_objc
+               response_body
+               response_code:
+  app/controllers/queries_controller.rb:20:in `get_table_names'
+  app/controllers/queries_controller.rb:9:in `show'
+
+Started POST "/__better_errors/8a4de88ac9b32b11/variables" for ::1 at 2020-03-18 21:15:47 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-18 21:16:07 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 270ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-20 17:45:07 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 1478ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of nil into String:
+  app/controllers/queries_controller.rb:33:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:32:in `get_list_for_table'
+  app/controllers/queries_controller.rb:43:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:42:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/1f81e96373bd406b/variables" for ::1 at 2020-03-20 17:45:08 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-20 17:45:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 391ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `put' for #<QueriesController:0x00007fa4bdb5a928>
+Did you mean?  puts
+               putc:
+  app/controllers/queries_controller.rb:31:in `get_list_for_table'
+  app/controllers/queries_controller.rb:45:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:44:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/aa0433960c2045e3/variables" for ::1 at 2020-03-20 17:45:55 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-20 17:46:11 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of nil into String:
+  app/controllers/queries_controller.rb:35:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:34:in `get_list_for_table'
+  app/controllers/queries_controller.rb:45:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:44:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/bfed0700723c12af/variables" for ::1 at 2020-03-20 17:46:12 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-20 17:46:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 0.0ms)
+
+
+
+URI::InvalidURIError - bad URI(is not URI?): https://inf551-jordankm.firebaseio.com/sakila/index/actor/hi there.json?:
+  app/controllers/queries_controller.rb:34:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:32:in `get_list_for_table'
+  app/controllers/queries_controller.rb:43:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:42:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/08f238b90be6e54a/variables" for ::1 at 2020-03-20 17:46:54 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-20 17:47:38 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.0ms)
+
+
+
+URI::InvalidURIError - bad URI(is not URI?): https://inf551-jordankm.firebaseio.com/sakila/index/actor/hi there.json?:
+  app/controllers/queries_controller.rb:36:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:34:in `get_list_for_table'
+  app/controllers/queries_controller.rb:45:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:44:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/74c3113aa5738317/variables" for ::1 at 2020-03-20 17:47:39 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-20 17:48:36 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 0.0ms)
+
+
+
+URI::InvalidURIError - bad URI(is not URI?): https://inf551-jordankm.firebaseio.com/sakila/index/actor/hi there.json?:
+  app/controllers/queries_controller.rb:37:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:35:in `get_list_for_table'
+  app/controllers/queries_controller.rb:46:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:45:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/af9aceb7f6833d9b/variables" for ::1 at 2020-03-20 17:48:36 -0700
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-20 17:49:42 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7973ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=hi+there" for ::1 at 2020-03-20 17:53:43 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hi there"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7849ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 17:54:59 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7920ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 17:56:37 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7884ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 17:57:58 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8285ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=silay+silchar" for ::1 at 2020-03-20 18:01:04 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"silay silchar"}
+Started GET "/query?database_name=world&db_query=silay+silchar" for ::1 at 2020-03-20 18:01:12 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"silay silchar"}
+Completed 500 Internal Server Error in 60014ms (ActiveRecord: 0.0ms)
+
+
+
+Net::OpenTimeout - execution expired:
+  app/controllers/queries_controller.rb:21:in `get_table_names'
+  app/controllers/queries_controller.rb:9:in `show'
+
+Completed 500 Internal Server Error in 60009ms (ActiveRecord: 0.0ms)
+
+
+
+Net::OpenTimeout - execution expired:
+  app/controllers/queries_controller.rb:21:in `get_table_names'
+  app/controllers/queries_controller.rb:9:in `show'
+
+Started POST "/__better_errors/1d68149ddff19afd/variables" for ::1 at 2020-03-20 18:02:12 -0700
+Started GET "/query?database_name=world&db_query=silay+silchar" for ::1 at 2020-03-20 18:18:55 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"silay silchar"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1760ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 18:19:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8772ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 18:21:12 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+Completed 500 Internal Server Error in 464ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `values' for nil:NilClass:
+  app/controllers/queries_controller.rb:39:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:34:in `get_list_for_table'
+  app/controllers/queries_controller.rb:46:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:45:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/5b3514b6bd5e2044/variables" for ::1 at 2020-03-20 18:21:13 -0700
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 18:22:03 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+Completed 500 Internal Server Error in 451ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `values' for nil:NilClass:
+  app/controllers/queries_controller.rb:39:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:34:in `get_list_for_table'
+  app/controllers/queries_controller.rb:46:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:45:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/55616cb99cbd9b3e/variables" for ::1 at 2020-03-20 18:22:04 -0700
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 18:22:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7989ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 18:27:27 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8035ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 19:06:23 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+Completed 500 Internal Server Error in 1534ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `join' for nil:NilClass:
+  app/controllers/queries_controller.rb:35:in `block in make_table_object_from_response'
+  app/controllers/queries_controller.rb:34:in `make_table_object_from_response'
+  app/controllers/queries_controller.rb:50:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:46:in `get_list_for_table'
+  app/controllers/queries_controller.rb:58:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:57:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/9737d5684b6c557a/variables" for ::1 at 2020-03-20 19:06:24 -0700
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 19:06:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+Completed 500 Internal Server Error in 473ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `join' for nil:NilClass:
+  app/controllers/queries_controller.rb:36:in `block in make_table_object_from_response'
+  app/controllers/queries_controller.rb:34:in `make_table_object_from_response'
+  app/controllers/queries_controller.rb:50:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:46:in `get_list_for_table'
+  app/controllers/queries_controller.rb:58:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:57:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:12:in `show'
+
+Started POST "/__better_errors/2a7caa6bd64056b6/variables" for ::1 at 2020-03-20 19:06:54 -0700
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 19:07:08 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 19:07:10 -0700
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7854ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7764ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 19:08:15 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7831ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 19:09:34 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7866ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 19:10:33 -0700
+
+SyntaxError - syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/queries_controller.rb:70:in `'
+
+Started POST "/__better_errors/9ea0b4eb7599f71e/variables" for ::1 at 2020-03-20 19:10:33 -0700
+Started GET "/query?database_name=sakila&db_query=abu+acua" for ::1 at 2020-03-20 19:10:45 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abu acua"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7814ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+

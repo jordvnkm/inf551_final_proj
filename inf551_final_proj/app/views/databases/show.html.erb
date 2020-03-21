@@ -1,12 +1,13 @@
 <form action="/query" method="get">
+  <label>Choose database to query</label><br>
   <% @databases_list.each_with_index do |database_name, index|  %>
     <% if index == 0 %>
-      <input type="radio" id=database_name name="database_name" value=<%= database_name %> checked="checked">
+      <input type="radio" id="<%= database_name %>" name="database_name" value=<%= database_name %> checked="checked">
     <% else %>
-      <input type="radio" id=database_name name="database_name" value=<%= database_name %>>
+      <input type="radio" id="<%= database_name %>" name="database_name" value=<%= database_name %>>
     <% end %>
 
-    <label for=database_name><%= database_name %></label><br>
+    <label for="<%= database_name %>"><%= database_name %></label><br>
   <% end %>
   <br>
   <label for="db_query">Enter Query</label>

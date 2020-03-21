@@ -9,7 +9,6 @@ class DatabasesController < ApplicationController
     databases_response = HTTParty.get(databases_query)
     databases = JSON.parse(databases_response.body) 
     @databases_list = databases.keys
-    @databases_index = 0
 
     render :show
   end
