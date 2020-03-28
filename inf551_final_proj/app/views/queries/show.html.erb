@@ -3,5 +3,34 @@
 
 <% @table_names.each do |table|  %>
   <li><%=table%></li><br>
+  <a href="/table_query">Hi there</a><br>
 
 <% end %>
+
+<% @render_objects.each do |object|  %>
+  <table>
+    <tr>
+    <% object.each_key do |key| %>
+      <% if key == "Hyperlinks" %>
+        <% next %>
+      <% end %>
+      <th><%= key %></th>
+    <%end%>
+    </tr>
+    <tr>
+    <% object.each_key do |key| %>
+      <% if key == "Hyperlinks" %>
+        <% next %>
+      <% end %>
+      <% if object.has_key? "Hyperlinks" and object["Hyperlinks"].keys.include? key %>
+        <td><a href=<%= object["Hyperlinks"][key] %>><%= object[key] %><a/></td>
+      <%  else %>
+        <td><%= object[key]%></td>
+      <%  end %>
+    <%end%>
+    </tr>
+  </table><br>
+<% end %>
+
+
+

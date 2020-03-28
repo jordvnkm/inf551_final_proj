@@ -11,19 +11,215 @@ class QueriesController < ApplicationController
     
     get_list_of_objs()
 
-    @list_of_objs = sort_list_of_objs()
+    sort_list_of_objs()
     puts " "
     puts "Sorted list"
-    puts @list_of_objs
+    puts @obj_list
+
+
+    @render_objects = get_render_objects()
 
     render :show
   end
 
   # Private methods
+
+
+  # requests_per_table is a hash :  {table_name : [ { primary_key_column_name : [ primary_values ]} ,  ]}}
+  def add_object_to_request_table(object, requests_per_table)
+    if object == nil
+      return
+    end 
+
+    table_name = nil
+    primary_keys = nil
+    object.each_key do |key|
+      primary_keys = key.split(/_/)
+      inner_obj = object[key]
+      inner_obj.each_key do |inner_key| 
+        table_name = inner_key
+      end
+    end
+
+    if not requests_per_table.has_key? table_name
+      requests_per_table[table_name] = Array.new
+    end
+
+    request_list = requests_per_table[table_name]
+
+    primary_columns = primary_columns_for_table(table_name)
+    primary_keys.each_with_index do |primary_key, index|
+      primary_column = primary_columns[index]
+
+      added = false
+      request_list.each do |request_hash|
+        if request_hash.has_key? primary_column
+          request_hash[primary_column].append(primary_key)
+          added = true
+        end
+      end
+
+      if not added
+        request_obj = Hash.new
+        request_obj[primary_column] = [primary_key]
+        request_list.append(request_obj)
+      end
+    end
+
+    puts "" 
+    puts "requests per table: "
+    puts requests_per_table
+    puts ""
+
+
+  end
+
+  def primary_columns_for_table(table_name)
+    return @table_schemas[table_name]["Primary Keys"]
+  end
+
+  def get_foreign_info_for_table(table_name)
+    return @table_schemas[table_name]["foreign_info"]
+  end
+  
+  def foreign_columns_for_table(table_name)
+    foreign_info = @table_schemas[table_name]["foreign_info"]
+    foreign_cols = Array.new
+    foreign_info.each do |info|
+      foreign_cols.append(info["Foreign key column"])
+    end
+    return foreign_cols
+  end
+
+  def get_foreign_val_for_object(object, table_name)
+    foreign_cols = foreign_cols_for_table(table_name)
+    foreign_vals = Array.new
+    foreign_cols.each do |col|
+      foreign_vals.append(object[col])
+    end
+    return foreign_vals.join("_")
+  end
+
+  def get_primary_val_for_object(object, table_name)
+    primary_cols = primary_columns_for_table(table_name)
+    primary_vals = Array.new
+    primary_cols.each do |col|
+      primary_vals.append(object[col])
+    end
+    return primary_vals.join("_")
+  end
+
+  # requests_per_table is a hash :  {table_name : [ { primary_key_column_name : [ primary_values ] },  ]}}
+  # make requests to firebase and create render objects (tables) from the responses
+  def get_render_objects_from_request_table(requests_per_table)
+    #query_string = $firebase_url + "/" + @database_name + "/schema.json?" 
+    query_string = $firebase_url + "/" + @database_name + "/" 
+
+    render_objs = []
+    requests_per_table.each_key do |table_name|
+      table_query = query_string + table_name + ".json?"
+      primary_key_list = requests_per_table[table_name]
+      primary_key_list.each do |request_hash|
+        request_hash.each_key do |primary_col|
+          primary_vals = request_hash[primary_col]
+          primary_vals.each do |primary_val|
+            final_query = table_query + 'orderBy="' + primary_col + '"&equalTo="' + primary_val + '"'
+            puts final_query
+            response = HTTParty.get(final_query)
+            response_obj = JSON.parse(response.body)
+            #response_obj["Table Name"] = table_name
+            puts "OBJECT FROM RESPONSE"
+            puts response_obj
+            object_to_append = nil
+            response_obj.each_key do |response_key|
+              object_to_append = response_obj[response_key]
+            end
+
+            object_to_append["Table name"] = table_name
+
+            hyperlinks = get_hyperlinks_for_object(object_to_append, table_name)
+            if hyperlinks
+              object_to_append["Hyperlinks"] = hyperlinks
+            end
+            render_objs.append(object_to_append)
+          end
+        end
+      end
+    end
+
+    puts ""
+    puts "RENDER OBJS : "
+    puts render_objs
+    return render_objs
+  end
+
+  # hyperlinks should return a hash { foreign key column : hyperlink url }
+  def get_hyperlinks_for_object(response_obj, table_name)
+    foreign_info = get_foreign_info_for_table(table_name)
+    if not foreign_info
+      return nil
+    end
+    hyperlinks = Hash.new
+    table_hash = Hash.new
+
+    foreign_info.each do |info|
+      foreign_col = info["Foreign key column"]
+      foreign_table = info["Foreign table name"]
+      foreign_val = response_obj[foreign_col]
+      if not table_hash.has_key? foreign_table
+        table_hash[foreign_table] = Array.new
+      end
+      table_hash[foreign_table].append(foreign_val)
+    end
+
+    foreign_info.each do |info|
+      foreign_col = info["Foreign key column"]
+      foreign_table = info["Foreign table name"]
+      #foreign_val = response_obj[foreign_col]
+      foreign_vals = table_hash[foreign_table].join(";;") 
+      hyperlinks[foreign_col] = ("/table_query?table_name=" + foreign_table +  "&primary_vals=" + foreign_vals +
+                                 "&prev_table=" + table_name)
+    end
+
+
+    return hyperlinks
+
+  end
+
+  
+  def get_render_objects
+    @table_schemas = get_table_schemas()
+    puts "table schemas : "
+    puts @table_schemas
+
+    requests_per_table = Hash.new
+    @obj_list.each do |object|
+      add_object_to_request_table(object, requests_per_table)
+    end
+
+
+    return get_render_objects_from_request_table(requests_per_table)
+  end
+
+
+  def get_table_schemas
+    query_string = $firebase_url + "/" + @database_name + "/schema.json?" 
+    response = HTTParty.get(query_string)
+    response_obj = JSON.parse(response.body)
+    return response_obj
+  end
+
+
   
   def sort_list_of_objs
-    return @obj_list.sort do |a, b|
-      puts "SORTING"
+    if @obj_list.empty?
+      return
+    end
+
+    @obj_list.sort! do |a, b|
+      if (a == nil or b == nil)
+        return a <=> b
+      end
       cols_a = nil
       cols_b = nil
       a.each_key do |akey|
@@ -38,8 +234,6 @@ class QueriesController < ApplicationController
           cols_b = inner_b[binner]
         end
       end
-      puts cols_a
-      puts cols_b
       if cols_a.length > cols_b.length
         -1
       elsif cols_a.length < cols_b.length 
@@ -125,12 +319,7 @@ class QueriesController < ApplicationController
     @table_names.each do |table_name|
       get_list_for_table(table_name)
     end
-    temp = @obj_list[0]
-    @obj_list[0] = @obj_list[2]
-    @obj_list[2] = temp
-    puts @obj_list
     return @obj_list
-
   end
 
 

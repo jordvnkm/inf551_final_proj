@@ -197,6 +197,8 @@ def update_firebase_indexing_rules(primary_keys, firebase_nodename, table_name):
     table_rules = {}
     if table_name in nodename_rules:
         table_rules  = nodename_rules[table_name]
+    #table_rules[".indexOn"] = ".value"
+        
 
     indexOn_list = []
     if ".indexOn" in table_rules:
@@ -261,9 +263,6 @@ def send_table_to_firebase(columns, rows, foreign_keys, primary_keys, inverted_i
         x = requests.patch(firebase_url, data=json.dumps(table_dict))
         print(x)
 
-
-    return
-    
     
     #firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json?writeSizeLimit=unlimited"
     firebase_url = FIREBASE_URL + firebase_nodename + "/" + table_name + ".json"
