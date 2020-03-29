@@ -279,7 +279,12 @@ class QueriesController < ApplicationController
   end
 
   def get_tokens
-    return @query.split(/,|-| /)
+    tokens =  @query.split(/,|-| /)
+    lower_tokens = Array.new
+    tokens.each do |token|
+      lower_tokens.append(token.downcase)
+    end
+    return lower_tokens
   end
 
 

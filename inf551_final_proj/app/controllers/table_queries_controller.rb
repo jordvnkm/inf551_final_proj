@@ -44,13 +44,18 @@ class TableQueriesController < ApplicationController
       matched = true
       primary_cols.each_with_index do |col, index|
         primary_val = primary_keys[index]
+        puts "PRIMARY VAL"
+        puts primary_val
+        puts "RECORD VAL"
+        puts record[col]
         if record[col] != primary_val
           matched = false
-          break
+          next
         end
       end
 
       if matched
+        puts "MATCHED"
         match = record
       end
     end
@@ -63,7 +68,7 @@ class TableQueriesController < ApplicationController
   def add_hyperlinks_to_object(object)
     foreign_info = @table_schema["foreign_info"]
     if not foreign_info
-      return
+      return object
     end
 
     hyperlinks = Hash.new
@@ -106,6 +111,7 @@ class TableQueriesController < ApplicationController
 
     object = get_object_from_firebase()
     object = add_hyperlinks_to_object(object)
+    object["Table name"] = @table_name
     return object
 
   end

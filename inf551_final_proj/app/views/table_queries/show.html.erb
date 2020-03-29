@@ -1,0 +1,28 @@
+<h1> Querying database : <%= @database_name %></h1>
+
+
+<table>
+  <tr>
+  <% @render_object.each_key do |key| %>
+    <% if key == "Hyperlinks" %>
+      <% next %>
+    <% end %>
+    <th><%= key %></th>
+  <%end%>
+  </tr>
+  <tr>
+  <% @render_object.each_key do |key| %>
+    <% if key == "Hyperlinks" %>
+      <% next %>
+    <% end %>
+    <% if @render_object.has_key? "Hyperlinks" and @render_object["Hyperlinks"].keys.include? key %>
+      <td><a href=<%= @render_object["Hyperlinks"][key] %>><%= @render_object[key] %><a/></td>
+    <%  else %>
+      <td><%= @render_object[key]%></td>
+    <%  end %>
+  <%end%>
+  </tr>
+</table><br>
+
+
+
