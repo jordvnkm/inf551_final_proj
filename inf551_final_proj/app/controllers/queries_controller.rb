@@ -119,31 +119,51 @@ class QueriesController < ApplicationController
     requests_per_table.each_key do |table_name|
       table_query = query_string + table_name + ".json?"
       primary_key_list = requests_per_table[table_name]
-      primary_key_list.each do |request_hash|
-        request_hash.each_key do |primary_col|
-          primary_vals = request_hash[primary_col]
-          primary_vals.each do |primary_val|
-            final_query = table_query + 'orderBy="' + primary_col + '"&equalTo="' + primary_val + '"'
-            puts final_query
-            response = HTTParty.get(final_query)
-            response_obj = JSON.parse(response.body)
-            #response_obj["Table Name"] = table_name
-            puts "OBJECT FROM RESPONSE"
-            puts response_obj
-            object_to_append = nil
-            response_obj.each_key do |response_key|
-              object_to_append = response_obj[response_key]
-            end
 
-            object_to_append["Table name"] = table_name
-
-            hyperlinks = get_hyperlinks_for_object(object_to_append, table_name)
-            if hyperlinks
-              object_to_append["Hyperlinks"] = hyperlinks
+      request_hash = primary_key_list[0]
+      request_hash.each_key do |primary_col|
+        primary_vals = request_hash[primary_col]
+        primary_vals.each_with_index do |primary_val, index|
+          final_query = table_query + 'orderBy="' + primary_col + '"&equalTo="' + primary_val + '"'
+          puts final_query
+          response = HTTParty.get(final_query)
+          response_obj = JSON.parse(response.body)
+          #response_obj["Table Name"] = table_name
+          puts "OBJECT FROM RESPONSE"
+          puts response_obj
+          object_to_append = nil
+          response_obj.each_key do |response_key|
+            #object_to_append = response_obj[response_key]
+            object= response_obj[response_key]
+            is_match = true
+            primary_key_list.slice(1, primary_key_list.length - 1).each do |secondary_hash|
+              secondary_hash.each_key do |secondary_col| 
+                secondary_val = secondary_hash[secondary_col][index]
+                val = object[secondary_col]
+                if val != secondary_val
+                  is_match = false
+                  break
+                end
+              end
             end
-            render_objs.append(object_to_append)
+            if is_match
+              object_to_append = object
+            end
           end
+
+          if not object_to_append
+            next
+          end
+
+          object_to_append["Table name"] = table_name
+
+          hyperlinks = get_hyperlinks_for_object(object_to_append, table_name)
+          if hyperlinks
+            object_to_append["Hyperlinks"] = hyperlinks
+          end
+          render_objs.append(object_to_append)
         end
+
       end
     end
 
@@ -183,7 +203,7 @@ class QueriesController < ApplicationController
       foreign_vals = table_hash[foreign_table].join(";;") 
       foreign_cols = cols_hash[foreign_table].join(";;")
       hyperlinks[foreign_col] = ("/table_query?table_name=" + foreign_table +  "&primary_vals=" + foreign_vals +
-                                 "&prev_table=" + table_name + "&primary_columns=" + foreign_cols)
+                                 "&prev_table=" + table_name + "&primary_columns=" + foreign_cols + "&db_name=" + @database_name)
     end
 
 
