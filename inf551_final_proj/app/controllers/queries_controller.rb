@@ -161,15 +161,19 @@ class QueriesController < ApplicationController
     end
     hyperlinks = Hash.new
     table_hash = Hash.new
+    cols_hash = Hash.new
 
     foreign_info.each do |info|
       foreign_col = info["Foreign key column"]
       foreign_table = info["Foreign table name"]
+      foreign_table_col = info["Foreign table column"]
       foreign_val = response_obj[foreign_col]
       if not table_hash.has_key? foreign_table
         table_hash[foreign_table] = Array.new
+        cols_hash[foreign_table] = Array.new
       end
       table_hash[foreign_table].append(foreign_val)
+      cols_hash[foreign_table].append(foreign_table_col)
     end
 
     foreign_info.each do |info|
@@ -177,8 +181,9 @@ class QueriesController < ApplicationController
       foreign_table = info["Foreign table name"]
       #foreign_val = response_obj[foreign_col]
       foreign_vals = table_hash[foreign_table].join(";;") 
+      foreign_cols = cols_hash[foreign_table].join(";;")
       hyperlinks[foreign_col] = ("/table_query?table_name=" + foreign_table +  "&primary_vals=" + foreign_vals +
-                                 "&prev_table=" + table_name)
+                                 "&prev_table=" + table_name + "&primary_columns=" + foreign_cols)
     end
 
 

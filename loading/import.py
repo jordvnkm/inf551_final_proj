@@ -112,7 +112,7 @@ def to_inverted_index_value_obj(foreign_keys, foreign_key_values,
     #        "Column": column_name}
     
 
-def send_table_schema_to_firebase(firebase_nodename, table_name, primary_keys, foreign_key_columns, foreign_table_vals):
+def send_table_schema_to_firebase(firebase_nodename, table_name, primary_keys, foreign_key_columns, foreign_table_vals, foreign_table_cols):
     firebase_url = FIREBASE_URL +  firebase_nodename + "/schema.json"
 
     # table_schema will hold a json like dict representing the table schema.
@@ -123,9 +123,11 @@ def send_table_schema_to_firebase(firebase_nodename, table_name, primary_keys, f
     for index in range(len(foreign_key_columns)): # could also use foreign_table_vals
         foreign_key_column = foreign_key_columns[index]
         foreign_table_val = foreign_table_vals[index]
+        foreign_table_col = foreign_table_cols[index]
         foreign_info.append({
             "Foreign key column": foreign_key_column,
-            "Foreign table name": foreign_table_val
+            "Foreign table name": foreign_table_val,
+            "Foreign table column": foreign_table_col
             })
     table_schema[table_name]["foreign_info"] = foreign_info
     print("schema request")
@@ -143,19 +145,26 @@ def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inver
     foreign_key_columns = []
     foreign_key_indexes = []
     foreign_table_vals = []
+    foreign_table_cols = []
     
     for key in primary_keys:
         primary_key_columns.append(primary_keys.index(key))
 
     # foreign keys is a tuple of info
     # [current table, foreign col,  etc  TODO ]
+    print()
+    print("FOREIGN KEYS : ")
+    print(table_name)
+    print(foreign_keys)
+    print()
     for key_tuple in foreign_keys:
         foreign_key_indexes.append(columns.index(key_tuple[1]))
         foreign_table_vals.append(key_tuple[3])
         foreign_key_columns.append(key_tuple[1])
+        foreign_table_cols.append(key_tuple[4])
 
    
-    send_table_schema_to_firebase(firebase_nodename, table_name, primary_keys, foreign_key_columns, foreign_table_vals)
+    send_table_schema_to_firebase(firebase_nodename, table_name, primary_keys, foreign_key_columns, foreign_table_vals, foreign_table_cols)
 
     for row in rows:
         primary_key_values = [row[i] for i in primary_key_columns]

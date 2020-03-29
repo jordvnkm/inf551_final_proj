@@ -8626,3 +8626,75 @@ Processing by TableQueriesController#show as HTML
 Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/query?database_name=world&db_query=khanh+hoa" for ::1 at 2020-03-28 17:42:43 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"khanh hoa"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2970ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=VNM&prev_table=city&primary_columns=Code" for ::1 at 2020-03-28 17:42:48 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"VNM", "prev_table"=>"city", "primary_columns"=>"Code"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=VNM&prev_table=city&primary_columns=Code" for ::1 at 2020-03-28 17:42:48 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"VNM", "prev_table"=>"city", "primary_columns"=>"Code"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=khanh+hoa" for ::1 at 2020-03-28 17:43:52 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"khanh hoa"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2996ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=VNM&prev_table=city&primary_columns=Code" for ::1 at 2020-03-28 17:44:04 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"VNM", "prev_table"=>"city", "primary_columns"=>"Code"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=VNM&prev_table=city&primary_columns=Code" for ::1 at 2020-03-28 17:44:04 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"VNM", "prev_table"=>"city", "primary_columns"=>"Code"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=khanh+hoa" for ::1 at 2020-03-28 17:44:10 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"khanh hoa"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 7346ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=VNM&prev_table=city&primary_columns=Code" for ::1 at 2020-03-28 17:44:31 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"VNM", "prev_table"=>"city", "primary_columns"=>"Code"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=VNM&prev_table=city&primary_columns=Code" for ::1 at 2020-03-28 17:44:31 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"VNM", "prev_table"=>"city", "primary_columns"=>"Code"}
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
