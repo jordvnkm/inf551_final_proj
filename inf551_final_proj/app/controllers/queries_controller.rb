@@ -204,7 +204,11 @@ class QueriesController < ApplicationController
     foreign_info.each do |info|
       foreign_col = info["Foreign key column"]
       foreign_table = info["Foreign table name"]
-      #foreign_val = response_obj[foreign_col]
+      foreign_val = response_obj[foreign_col]
+
+      if foreign_val == "None"
+        next
+      end
       if not table_hash.has_key? foreign_table
         next
       end

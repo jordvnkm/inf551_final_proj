@@ -1,24 +1,57 @@
+<head>
+  <style type="text/css">
+  #query_results {
+    width: 100%;
+    border-collapse: collapse;
+      font-size: 14px;
+  }
+ 
+  #query_results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #query_results th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  </style>
+</head>
+
 <h1> Querying database : <%= @database_name %></h1>
 
 
 <% @table_names.each do |table|  %>
   <li><%=table%></li><br>
-  <a href="/table_query">Hi there</a><br>
-
 <% end %>
 
 <% @render_objects.each do |object|  %>
-  <table>
+  <table id="query_results">
     <tr>
+
+    <th>Table Name</th>
+
+
     <% object.each_key do |key| %>
+      <% if key == "Table name" %>
+        <% next %>
+      <% end %>
       <% if key == "Hyperlinks" %>
         <% next %>
       <% end %>
       <th><%= key %></th>
     <%end%>
     </tr>
+
     <tr>
+    <td><%= object["Table name"]%></td>
+
     <% object.each_key do |key| %>
+      <% if key == "Table name" %>
+        <% next %>
+      <% end %>
       <% if key == "Hyperlinks" %>
         <% next %>
       <% end %>

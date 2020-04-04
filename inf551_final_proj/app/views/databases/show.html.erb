@@ -1,19 +1,164 @@
-<form action="/query" method="get">
-  <label>Choose database to query</label><br>
+<head>
+  <link rel="stylesheet"
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+
+  input[type=text]::placeholder {
+    text-align: left;
+  }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .databases {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .querybox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .titlelabel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 90px;
+    font-family: "Impact", charcoal, sans-serif;
+  }
+
+  .outerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .queryContainer {
+    display: flex;
+    width: 30%;
+    border: 1px solid #dfe1e5;
+    border-radius: 30px;
+    outline: none;
+  }
+
+  .queryContainer:hover {
+    box-shadow: 2px 2px 2px 2px #dfe1e5;
+  }
+
+  .queryContainer:focus-within {
+    box-shadow: 2px 2px 2px 2px #dfe1e5;
+  }
+
+  .input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+
+  .icon {
+    padding: 10px;
+    min-width: 50px;
+    text-align: center;
+    color: #99a0a6;
+  }
+
+  .radiobutton {
+    display: flex;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    outline: none;
+    border: none;
+  }
+
+  .submit {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    outline: none;
+    border: none;
+  }
+
+  .radiobutton:checked ~ label {
+    border: 1px solid #99a0a6;
+    box-shadow: 2px 2px 2px 2px #dfe1e5;
+  }
+
+  .radiolabel {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .radiolabel:hover {
+    box-shadow: 2px 2px 2px 2px #dfe1e5;
+  }
+
+
+  </style>
+</head>
+
+
+<div class="outerContainer">
+<form action="/query" method="get" class="flex-container">
+  <div class="titlelabel">
+    <span style="color: #4285F4">Da</span>
+    <span style="color: #DB4437">ta</span>
+    <span style="color: #F4B400">ba</span>
+    <span style="color: #4285F4">se </span>
+    <span>&nbsp</span>
+    <span style="color: #0F9D58">Qu</span>
+    <span style="color: #DB4437">ery</span>
+  </div>
+
+  <div class="databases">
   <% @databases_list.each_with_index do |database_name, index|  %>
+    <div class=dbchild>
     <% if index == 0 %>
-      <input type="radio" id="<%= database_name %>" name="database_name" value=<%= database_name %> checked="checked">
+      <input type="radio" id="<%= database_name %>" name="database_name" value=<%= database_name %> checked="checked" class="radiobutton">
     <% else %>
-      <input type="radio" id="<%= database_name %>" name="database_name" value=<%= database_name %>>
+      <input type="radio" id="<%= database_name %>" name="database_name" value=<%= database_name %> class="radiobutton">
     <% end %>
 
-    <label for="<%= database_name %>"><%= database_name %></label><br>
+    <label for="<%= database_name %>" class="radiolabel"><%= database_name %></label>
+    </div>
   <% end %>
+  </div>
   <br>
-  <label for="db_query">Enter Query</label>
-  <input type="text" id="db_query" name="db_query">
-  <input type="submit" value="Submit">
+
+  <div class="querybox">
+    <!-- <label for="db_query">Enter Query</label> -->
+    <div class="queryContainer">
+      <i class="fa fa-search icon"></i>
+      <input type="text" id="db_query" name="db_query" placeholder="Enter Query" id="querybox" class="input">
+      <input type="submit" value="Submit" class="submit">
+    </div>
+  </div>
   <br>
   <br>
 </form>
+</div>
 

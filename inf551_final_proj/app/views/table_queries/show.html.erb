@@ -1,7 +1,31 @@
+<head>
+  <style type="text/css">
+  #query_results {
+    width: 100%;
+    border-collapse: collapse;
+      font-size: 14px;
+  }
+
+  #query_results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  #query_results th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  </style>
+</head>
+
+<div>
+
 <h1> Querying database : <%= @database_name %></h1>
 
 
-<table>
+<table id="query_results">
   <tr>
   <% @render_object.each_key do |key| %>
     <% if key == "Hyperlinks" %>
@@ -26,3 +50,4 @@
 
 
 
+<div>

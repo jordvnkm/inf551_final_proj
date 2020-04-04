@@ -96,6 +96,11 @@ class TableQueriesController < ApplicationController
       foreign_col = info["Foreign key column"]
       foreign_table = info["Foreign table name"]
       foreign_table_col = info["Foreign table column"]
+      foreign_val = object[foreign_col]
+
+      if foreign_val == "None"
+        next
+      end
 
       if not table_hash.has_key? foreign_table
         next
