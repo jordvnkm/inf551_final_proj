@@ -67,7 +67,7 @@ class TableQueriesController < ApplicationController
   # hyperlinks should be a hash {foreign key column : hyperlink url}
   def add_hyperlinks_to_object(object)
     foreign_info = @table_schema["foreign_info"]
-    if not foreign_info
+    if not foreign_info or not object
       return object
     end
 
@@ -80,6 +80,10 @@ class TableQueriesController < ApplicationController
       foreign_table = info["Foreign table name"]
       foreign_table_col = info["Foreign table column"]
       foreign_val = object[foreign_col]
+
+      if foreign_val == "None"
+        next
+      end
       if not table_hash.has_key? foreign_table
         table_hash[foreign_table] = Array.new
         cols_hash[foreign_table] = Array.new
@@ -92,6 +96,10 @@ class TableQueriesController < ApplicationController
       foreign_col = info["Foreign key column"]
       foreign_table = info["Foreign table name"]
       foreign_table_col = info["Foreign table column"]
+
+      if not table_hash.has_key? foreign_table
+        next
+      end
       #foreign_val = object[foreign_col]
       foreign_vals = table_hash[foreign_table].join(";;")
       foreign_cols = cols_hash[foreign_table].join(";;")
@@ -110,6 +118,9 @@ class TableQueriesController < ApplicationController
     puts @table_schema
 
     object = get_object_from_firebase()
+    if not object
+      return
+    end
     object = add_hyperlinks_to_object(object)
     object["Table name"] = @table_name
     return object

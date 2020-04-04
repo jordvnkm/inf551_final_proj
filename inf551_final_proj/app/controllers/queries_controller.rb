@@ -188,6 +188,11 @@ class QueriesController < ApplicationController
       foreign_table = info["Foreign table name"]
       foreign_table_col = info["Foreign table column"]
       foreign_val = response_obj[foreign_col]
+
+      if foreign_val == "None"
+        next
+      end
+
       if not table_hash.has_key? foreign_table
         table_hash[foreign_table] = Array.new
         cols_hash[foreign_table] = Array.new
@@ -200,6 +205,10 @@ class QueriesController < ApplicationController
       foreign_col = info["Foreign key column"]
       foreign_table = info["Foreign table name"]
       #foreign_val = response_obj[foreign_col]
+      if not table_hash.has_key? foreign_table
+        next
+      end
+      
       foreign_vals = table_hash[foreign_table].join(";;") 
       foreign_cols = cols_hash[foreign_table].join(";;")
       hyperlinks[foreign_col] = ("/table_query?table_name=" + foreign_table +  "&primary_vals=" + foreign_vals +
