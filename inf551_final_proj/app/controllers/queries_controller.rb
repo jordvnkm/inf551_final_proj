@@ -5,9 +5,16 @@ $firebase_url = "https://inf551-jordankm.firebaseio.com"
 
 class QueriesController < ApplicationController
   def show
+    databases_query = $firebase_url + '/.json?shallow=true'
+    databases_response = HTTParty.get(databases_query)
+    databases = JSON.parse(databases_response.body)
+    @databases_list = databases.keys 
+
+
     @database_name = params["database_name"]
     @table_names = get_table_names()
     @query = params["db_query"]
+    @query = @query.sub(".", "*")
     
     get_list_of_objs()
 
@@ -34,7 +41,7 @@ class QueriesController < ApplicationController
     table_name = nil
     primary_keys = nil
     object.each_key do |key|
-      primary_keys = key.split(/_/)
+      primary_keys = key.split(/;;/)
       inner_obj = object[key]
       inner_obj.each_key do |inner_key| 
         table_name = inner_key
@@ -97,7 +104,7 @@ class QueriesController < ApplicationController
     foreign_cols.each do |col|
       foreign_vals.append(object[col])
     end
-    return foreign_vals.join("_")
+    return foreign_vals.join(";;")
   end
 
   def get_primary_val_for_object(object, table_name)
@@ -307,7 +314,9 @@ class QueriesController < ApplicationController
     responses.each do |response|
       object = Hash.new
       should_append = true
-      primary_key_value = response["Primary Values"].join("_")
+      puts "PRIMARY VALUES : "
+      puts response["Primary Values"]
+      primary_key_value = response["Primary Values"].join(";;")
       puts primary_key_value
 
       # find object if it already exists in the object list.
@@ -346,6 +355,8 @@ class QueriesController < ApplicationController
       response = HTTParty.get(query_string)
       response_obj = JSON.parse(response.body)
       if (response_obj)
+        puts "Token = "
+        puts token
         puts "Response = "
         puts response_obj
         puts " "

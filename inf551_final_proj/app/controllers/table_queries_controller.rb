@@ -32,6 +32,12 @@ class TableQueriesController < ApplicationController
 
   def get_object_from_firebase
     primary_keys = @primary_key.split(";;")
+    new_primary_keys = Array.new
+    primary_keys.each do |key|
+      new_primary_keys.append(key.sub(".", "*"))
+    end
+    primary_keys = new_primary_keys
+    
     primary_cols = @primary_columns.split(";;")
     query = ($firebase_url + "/" + @database_name + "/" + @table_name + ".json?orderBy=" + '"' + primary_cols[0] +
              '"' + "&equalTo=" + '"' +  primary_keys[0] + '"')

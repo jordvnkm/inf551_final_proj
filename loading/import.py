@@ -9,7 +9,10 @@ from decimal import Decimal
 FIREBASE_URL = "https://inf551-jordankm.firebaseio.com/"
 
 def remove_special_chars(string):
-    return ''.join(e for e in string if e.isalnum() or e == "_")
+    string = ''.join(e for e in string if e.isalnum() or (e == "_" or e == "."))
+    string = string.replace(".", "*")
+    return string
+    #return ''.join(e for e in string if e.isalnum() or (e == "_" or e == "."))
 
 
 # returns a string to query the database for its schema
@@ -54,6 +57,8 @@ def get_primary_key_str(database_name, table_name):
     # foreignkeycolumnNames: [list of columnnames])
 def send_inverted_index_to_firebase(inverted_index, firebase_nodename, table_name):
     firebase_url = FIREBASE_URL + firebase_nodename + "/index/" + str(table_name) + ".json"
+    x = requests.delete(firebase_url)
+    print(x)
     #x = requests.patch(firebase_url, data=json.dumps(inverted_index))
     #print("sending inverted index")
     #x = requests.put(firebase_url, data=json.dumps(inverted_index))
@@ -172,7 +177,7 @@ def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inver
 
         for index in range(len(columns)):
             column_name = columns[index]
-            column_val = row[index]
+            column_val = str(row[index])
             column_values = tokenize(column_val)
             for token in column_values:
                 index_obj = to_inverted_index_value_obj(foreign_key_columns, foreign_key_values, foreign_table_vals,
@@ -180,6 +185,7 @@ def add_rows_to_inverted_index(columns , rows, foreign_keys, primary_keys, inver
                 if index_obj is not None:
                     if token == None or token == "":
                         continue
+
                     if token not in inverted_index:
                         inverted_index[token] = []
                     inverted_index[token].append(index_obj)
@@ -240,6 +246,7 @@ def send_table_to_firebase(columns, rows, foreign_keys, primary_keys, inverted_i
     for row in rows:
         parsed_row = []
         for item in row:
+
             if type(item) == Decimal:
                 parsed_row.append(str(float(item)))
             else:
@@ -358,7 +365,7 @@ def import_databases(args):
 
     for table_name in table_names:
         table_name = table_name[0]
-#        if table_name != "staff":
+#        if table_name != "countrylanguage":
 #            print("skipping")
 #            continue
         inverted_index = {}

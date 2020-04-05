@@ -12393,3 +12393,856 @@ Processing by TableQueriesController#show as HTML
 Completed 200 OK in 524ms (Views: 23.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/query?database_name=sakila&db_query=china" for ::1 at 2020-04-04 15:14:09 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"china"}
+Started GET "/" for ::1 at 2020-04-04 15:14:20 -0700
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 23180ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 1185ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=english" for ::1 at 2020-04-04 15:20:06 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"english"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 20463ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=AIA&prev_table=countrylanguage&primary_columns=Code&db_name=world" for ::1 at 2020-04-04 15:24:29 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"AIA", "prev_table"=>"countrylanguage", "primary_columns"=>"Code", "db_name"=>"world"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 520ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=english" for ::1 at 2020-04-04 15:38:35 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"english"}
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:38:42 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2681ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20831ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:41:04 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2664ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:42:09 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+Started GET "/query?database_name=sakila&db_query=china" for ::1 at 2020-04-04 15:42:12 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2792ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-04 15:42:14 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1204ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=abw" for ::1 at 2020-04-04 15:42:20 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2418ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:42:34 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 24357ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2692ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=abw" for ::1 at 2020-04-04 15:42:43 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2434ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:42:53 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2607ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:43:29 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2611ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:43:55 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2595ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:45:23 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3439ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:45:58 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2595ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:46:17 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3704ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:46:52 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2615ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=ABW&prev_table=countrylanguage&primary_columns=Code&db_name=world" for ::1 at 2020-04-04 15:47:34 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"ABW", "prev_table"=>"countrylanguage", "primary_columns"=>"Code", "db_name"=>"world"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 498ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:59:01 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2693ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:59:25 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2596ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 15:59:51 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2590ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:00:26 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2619ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:00:41 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2645ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:01:02 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2669ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:01:40 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2650ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:01:55 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2645ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:02:06 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2660ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:02:50 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2686ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:15:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (252.4ms)
+Completed 500 Internal Server Error in 3244ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `e_name' for #<#<Class:0x00007f9cdc9f70b0>:0x00007f9cdc9f5490>:
+  app/views/queries/show.html.erb:65:in `block in _app_views_queries_show_html_erb__2399739536791412667_70155678866600'
+  app/views/queries/show.html.erb:62:in `_app_views_queries_show_html_erb__2399739536791412667_70155678866600'
+  app/controllers/queries_controller.rb:28:in `show'
+
+Started POST "/__better_errors/d07705e4d1c16dac/variables" for ::1 at 2020-04-04 16:15:58 -0700
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:17:46 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3928ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:18:46 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2871ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:19:26 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2851ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=china" for ::1 at 2020-04-04 16:19:52 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23454ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=china" for ::1 at 2020-04-04 16:22:30 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 22317ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:23:52 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2865ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-04 16:24:03 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 269ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:24:06 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2876ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:24:39 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2880ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:27:35 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2908ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:29:40 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2896ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:30:06 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2857ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:33:43 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2919ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:34:40 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2839ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:34:46 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2821ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-04 16:35:49 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 246ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:36:20 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2825ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:37:08 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2903ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:38:03 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2836ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:38:13 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2968ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:38:52 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2855ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:39:05 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2845ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:39:45 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2828ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:41:04 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3055ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:41:35 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2930ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:42:15 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2847ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:42:33 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2880ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:43:37 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2934ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:44:26 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2947ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:44:50 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2880ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:45:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 2936ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:46:30 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3789ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:46:46 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2822ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:47:34 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2844ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-04 16:48:16 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 254ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=china" for ::1 at 2020-04-04 16:48:28 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2168ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:48:36 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2822ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=ABW&prev_table=countrylanguage&primary_columns=Code&db_name=world" for ::1 at 2020-04-04 16:48:41 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"ABW", "prev_table"=>"countrylanguage", "primary_columns"=>"Code", "db_name"=>"world"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 578ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:51:17 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3189ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:52:03 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2853ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:52:47 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2893ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:53:47 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2874ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:54:07 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2906ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 16:54:52 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2838ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=dutch" for ::1 at 2020-04-04 16:55:19 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"dutch"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2650ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=59.2" for ::1 at 2020-04-04 16:55:33 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"59.2"}
+Completed 500 Internal Server Error in 757ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of String into Integer:
+  app/controllers/queries_controller.rb:316:in `block in make_table_object_from_response'
+  app/controllers/queries_controller.rb:313:in `make_table_object_from_response'
+  app/controllers/queries_controller.rb:358:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:349:in `get_list_for_table'
+  app/controllers/queries_controller.rb:369:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:368:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:18:in `show'
+
+Started POST "/__better_errors/8562d9cd0d035336/variables" for ::1 at 2020-04-04 16:55:34 -0700
+Started GET "/query?database_name=world&db_query=dutch" for ::1 at 2020-04-04 16:57:49 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"dutch"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2613ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=dutch" for ::1 at 2020-04-04 16:58:01 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"dutch"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2643ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=dutch" for ::1 at 2020-04-04 16:59:09 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"dutch"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2715ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-04 17:00:41 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 305ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=dutch" for ::1 at 2020-04-04 17:00:45 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"dutch"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2705ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=5.3" for ::1 at 2020-04-04 17:00:56 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"5.3"}
+Completed 500 Internal Server Error in 723ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of String into Integer:
+  app/controllers/queries_controller.rb:316:in `block in make_table_object_from_response'
+  app/controllers/queries_controller.rb:313:in `make_table_object_from_response'
+  app/controllers/queries_controller.rb:358:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:349:in `get_list_for_table'
+  app/controllers/queries_controller.rb:369:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:368:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:18:in `show'
+
+Started POST "/__better_errors/67a7f42d8c3f9c04/variables" for ::1 at 2020-04-04 17:00:57 -0700
+Started GET "/query?database_name=world&db_query=5.3" for ::1 at 2020-04-04 17:01:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"5.3"}
+Completed 500 Internal Server Error in 718ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of String into Integer:
+  app/controllers/queries_controller.rb:316:in `block in make_table_object_from_response'
+  app/controllers/queries_controller.rb:313:in `make_table_object_from_response'
+  app/controllers/queries_controller.rb:359:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:350:in `get_list_for_table'
+  app/controllers/queries_controller.rb:370:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:369:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:18:in `show'
+
+Started POST "/__better_errors/c8c485cd6851b4a8/variables" for ::1 at 2020-04-04 17:01:55 -0700
+Started GET "/query?database_name=world&db_query=5.3" for ::1 at 2020-04-04 17:02:43 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"5.3"}
+Completed 500 Internal Server Error in 710ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of String into Integer:
+  app/controllers/queries_controller.rb:317:in `block in make_table_object_from_response'
+  app/controllers/queries_controller.rb:313:in `make_table_object_from_response'
+  app/controllers/queries_controller.rb:360:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:351:in `get_list_for_table'
+  app/controllers/queries_controller.rb:371:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:370:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:18:in `show'
+
+Started POST "/__better_errors/24ad6b60d2728e62/variables" for ::1 at 2020-04-04 17:02:43 -0700
+Started GET "/query?database_name=world&db_query=5.3" for ::1 at 2020-04-04 17:08:31 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"5.3"}
+Completed 500 Internal Server Error in 742ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of String into Integer:
+  app/controllers/queries_controller.rb:317:in `block in make_table_object_from_response'
+  app/controllers/queries_controller.rb:313:in `make_table_object_from_response'
+  app/controllers/queries_controller.rb:362:in `block in get_list_for_table'
+  app/controllers/queries_controller.rb:351:in `get_list_for_table'
+  app/controllers/queries_controller.rb:373:in `block in get_list_of_objs'
+  app/controllers/queries_controller.rb:372:in `get_list_of_objs'
+  app/controllers/queries_controller.rb:18:in `show'
+
+Started POST "/__better_errors/4f9ac241cb99027e/variables" for ::1 at 2020-04-04 17:08:32 -0700
+Started GET "/table_query?table_name=country&primary_vals=CAN&prev_table=countrylanguage&primary_columns=Code&db_name=world" for ::1 at 2020-04-04 17:14:09 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"CAN", "prev_table"=>"countrylanguage", "primary_columns"=>"Code", "db_name"=>"world"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 477ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=NLD&prev_table=countrylanguage&primary_columns=Code&db_name=world" for ::1 at 2020-04-04 17:14:26 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"NLD", "prev_table"=>"countrylanguage", "primary_columns"=>"Code", "db_name"=>"world"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 504ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=china" for ::1 at 2020-04-04 17:15:01 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2936ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1621&prev_table=customers&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-04 17:15:12 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1621", "prev_table"=>"customers", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 529ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1056&prev_table=employees&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-04 17:15:14 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1056", "prev_table"=>"employees", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 482ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 17:15:20 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2917ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=dutch" for ::1 at 2020-04-04 19:18:59 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"dutch"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3683ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=dutch" for ::1 at 2020-04-04 19:40:24 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"dutch"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4670ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=5.3" for ::1 at 2020-04-04 19:40:35 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"5.3"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2156ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=0.0" for ::1 at 2020-04-04 19:43:28 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"0.0"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 22454ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=YEM&prev_table=countrylanguage&primary_columns=Code&db_name=world" for ::1 at 2020-04-04 19:44:03 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"YEM", "prev_table"=>"countrylanguage", "primary_columns"=>"Code", "db_name"=>"world"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 479ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-04 19:45:17 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 309ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=world&db_query=abw" for ::1 at 2020-04-04 19:46:11 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"world", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2856ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=country&primary_vals=ABW&prev_table=countrylanguage&primary_columns=Code&db_name=world" for ::1 at 2020-04-04 19:46:24 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"country", "primary_vals"=>"ABW", "prev_table"=>"countrylanguage", "primary_columns"=>"Code", "db_name"=>"world"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 495ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
