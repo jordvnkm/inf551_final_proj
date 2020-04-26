@@ -6,6 +6,11 @@ $firebase_url = 'https://inf551-jordankm.firebaseio.com'
 
 class TableQueriesController < ApplicationController
   def show
+    databases_query = $firebase_url + '/.json?shallow=true'
+    databases_response = HTTParty.get(databases_query)
+    databases = JSON.parse(databases_response.body)
+    @databases_list = databases.keys
+
     @database_name = params["db_name"]
     @table_name = params["table_name"]
     @primary_key = params["primary_vals"]

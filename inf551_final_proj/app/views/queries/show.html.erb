@@ -14,17 +14,22 @@
     border-collapse: collapse;
     font-size: 14px;
   }
+
+  table {
+    margin-bottom: 20px;  
+  }
  
   #query_results td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
   }
-  
+
   #query_results th {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    background-color: #adcaf7;
   }
 
   .headertitle {
@@ -32,6 +37,10 @@
     flex-direction: row;
     justify-content: center;
     font-size: 30px;
+  }
+
+  .headerlink {
+    text-decoration: none;
   }
 
   .outercontainer {
@@ -158,16 +167,18 @@
 
  <form action="/query" method="get" class="formcontainer">
    <div class="headerinfo">
-     <div class="headertitle">
-       <span style="color: #4285F4">Que</span>
-       <span style="color: #DB4437">ryi</span>
-       <span style="color: #F4B400">ng</span>
-       <span>&nbsp</span>
-       <span style="color: #4285F4">Dat</span>
-       <span style="color: #0F9D58">aba </span>
-       <span style="color: #DB4437">se</span>
-       <span>&nbsp</span>
-     </div>
+     <a href="http://localhost:3000" class="headerlink">
+       <div class="headertitle">
+         <span style="color: #4285F4">Que</span>
+         <span style="color: #DB4437">ryi</span>
+         <span style="color: #F4B400">ng</span>
+         <span>&nbsp</span>
+         <span style="color: #4285F4">Dat</span>
+         <span style="color: #0F9D58">aba </span>
+         <span style="color: #DB4437">se</span>
+         <span>&nbsp</span>
+       </div>
+     </a>
 
      <div class="databases">
      <% @databases_list.each_with_index do |database_name, index|  %>
