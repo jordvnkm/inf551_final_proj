@@ -19,9 +19,6 @@ class QueriesController < ApplicationController
     get_list_of_objs()
 
     sort_list_of_objs()
-    puts " "
-    puts "Sorted list"
-    puts @obj_list
 
 
     @render_objects = get_render_objects()
@@ -72,13 +69,6 @@ class QueriesController < ApplicationController
         request_list.append(request_obj)
       end
     end
-
-    puts "" 
-    puts "requests per table: "
-    puts requests_per_table
-    puts ""
-
-
   end
 
   def primary_columns_for_table(table_name)
@@ -132,12 +122,9 @@ class QueriesController < ApplicationController
         primary_vals = request_hash[primary_col]
         primary_vals.each_with_index do |primary_val, index|
           final_query = table_query + 'orderBy="' + primary_col + '"&equalTo="' + primary_val + '"'
-          puts final_query
           response = HTTParty.get(final_query)
           response_obj = JSON.parse(response.body)
           #response_obj["Table Name"] = table_name
-          puts "OBJECT FROM RESPONSE"
-          puts response_obj
           object_to_append = nil
           response_obj.each_key do |response_key|
             #object_to_append = response_obj[response_key]
@@ -174,9 +161,6 @@ class QueriesController < ApplicationController
       end
     end
 
-    puts ""
-    puts "RENDER OBJS : "
-    puts render_objs
     return render_objs
   end
 
@@ -234,8 +218,6 @@ class QueriesController < ApplicationController
   
   def get_render_objects
     @table_schemas = get_table_schemas()
-    puts "table schemas : "
-    puts @table_schemas
 
     requests_per_table = Hash.new
     @obj_list.each do |object|
@@ -314,10 +296,7 @@ class QueriesController < ApplicationController
     responses.each do |response|
       object = Hash.new
       should_append = true
-      puts "PRIMARY VALUES : "
-      puts response["Primary Values"]
       primary_key_value = response["Primary Values"].join(";;")
-      puts primary_key_value
 
       # find object if it already exists in the object list.
       objects.each do |obj|
@@ -346,23 +325,15 @@ class QueriesController < ApplicationController
 
 
   def get_list_for_table(table_name)
-    puts "table name = " + table_name
     tokens = get_tokens()
     objects = Array.new
     tokens.each do |token|
-      puts "token = " + token
       query_string = $firebase_url + "/" + @database_name + "/index/" + table_name + "/" + token + ".json?"
       response = HTTParty.get(query_string)
       response_obj = JSON.parse(response.body)
       if (response_obj)
-        puts "Token = "
-        puts token
-        puts "Response = "
-        puts response_obj
-        puts " "
         make_table_object_from_response(response_obj, token, table_name, objects)
       else
-        puts "Empty response"
       end
     end
     @obj_list.concat(objects)

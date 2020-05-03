@@ -17,8 +17,6 @@ class TableQueriesController < ApplicationController
     @primary_columns = params["primary_columns"]
 
     @render_object = get_render_object()
-    puts "render object : "
-    puts @render_object
 
 
     #render plain: params
@@ -55,10 +53,6 @@ class TableQueriesController < ApplicationController
       matched = true
       primary_cols.each_with_index do |col, index|
         primary_val = primary_keys[index]
-        puts "PRIMARY VAL"
-        puts primary_val
-        puts "RECORD VAL"
-        puts record[col]
         if record[col] != primary_val
           matched = false
           next
@@ -66,7 +60,6 @@ class TableQueriesController < ApplicationController
       end
 
       if matched
-        puts "MATCHED"
         match = record
       end
     end
@@ -131,7 +124,6 @@ class TableQueriesController < ApplicationController
 
   def get_render_object
     @table_schema = get_table_schema()
-    puts @table_schema
 
     object = get_object_from_firebase()
     if not object

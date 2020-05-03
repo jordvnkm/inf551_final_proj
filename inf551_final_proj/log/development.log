@@ -14382,3 +14382,582 @@ Processing by TableQueriesController#show as HTML
 Completed 200 OK in 1757ms (Views: 49.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/table_query?table_name=employees&primary_vals=1056&prev_table=employees&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-26 12:46:17 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1056", "prev_table"=>"employees", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 1975ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=offices&primary_vals=1&prev_table=employees&primary_columns=officeCode&db_name=classicmodels" for ::1 at 2020-04-26 12:46:21 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"offices", "primary_vals"=>"1", "prev_table"=>"employees", "primary_columns"=>"officeCode", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 808ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-26 12:46:28 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 287ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-27 20:24:00 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 2071ms (Views: 176.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=china" for ::1 at 2020-04-27 20:24:36 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 3007ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=king+kong+garden" for ::1 at 2020-04-27 20:24:51 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"king kong garden"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8150ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=king+kong+nv" for ::1 at 2020-04-27 20:25:32 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"king kong nv"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7926ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=america" for ::1 at 2020-04-27 20:27:05 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"america"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 3005ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=america+west" for ::1 at 2020-04-27 20:27:20 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"america west"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 5404ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=south+west" for ::1 at 2020-04-27 20:30:24 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"south west"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5889ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=west+coast" for ::1 at 2020-04-27 20:30:44 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"west coast"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5588ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=west+coast" for ::1 at 2020-04-27 20:31:01 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"west coast"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 5575ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=austraila+west" for ::1 at 2020-04-27 20:31:43 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"austraila west"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 5405ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=west+co" for ::1 at 2020-04-27 20:35:49 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"west co"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7141ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=west+co." for ::1 at 2020-04-27 20:36:45 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"west co."}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 11763ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=west+co" for ::1 at 2020-04-27 20:37:13 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"west co"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7165ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=south+brisbane" for ::1 at 2020-04-27 20:39:28 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"south brisbane"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5656ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=collectible" for ::1 at 2020-04-27 20:39:53 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"collectible"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 4906ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=vintage+horse" for ::1 at 2020-04-27 20:40:21 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"vintage horse"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 11611ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=productlines&primary_vals=Vintage" for ::1 at 2020-04-27 20:40:47 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"productlines", "primary_vals"=>"Vintage"}
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of nil into String:
+  app/controllers/table_queries_controller.rb:30:in `get_table_schema'
+  app/controllers/table_queries_controller.rb:126:in `get_render_object'
+  app/controllers/table_queries_controller.rb:19:in `show'
+
+Started POST "/__better_errors/4edd4811fd1fc79f/variables" for ::1 at 2020-04-27 20:40:48 -0700
+Started GET "/query?database_name=classicmodels&db_query=vintage+horse" for ::1 at 2020-04-27 20:41:24 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"vintage horse"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 11529ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=productlines&primary_vals=Trucks" for ::1 at 2020-04-27 20:41:43 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"productlines", "primary_vals"=>"Trucks"}
+Completed 500 Internal Server Error in 241ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of nil into String:
+  app/controllers/table_queries_controller.rb:30:in `get_table_schema'
+  app/controllers/table_queries_controller.rb:126:in `get_render_object'
+  app/controllers/table_queries_controller.rb:19:in `show'
+
+Started POST "/__better_errors/39e6b99780582fe3/variables" for ::1 at 2020-04-27 20:41:43 -0700
+Started GET "/query?database_name=classicmodels&db_query=collectible" for ::1 at 2020-04-27 20:41:45 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"collectible"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 3415ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=china" for ::1 at 2020-04-27 20:42:22 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3010ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1621&prev_table=customers&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-27 20:42:27 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1621", "prev_table"=>"customers", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 732ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=offices&primary_vals=5&prev_table=employees&primary_columns=officeCode&db_name=classicmodels" for ::1 at 2020-04-27 20:42:30 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"offices", "primary_vals"=>"5", "prev_table"=>"employees", "primary_columns"=>"officeCode", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 789ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=china" for ::1 at 2020-04-27 20:42:35 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2942ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=garden+road" for ::1 at 2020-04-27 20:42:44 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"garden road"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6497ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=garden+house" for ::1 at 2020-04-27 20:43:06 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"garden house"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6781ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=productlines&primary_vals=Ships&prev_table=products&primary_columns=productLine&db_name=classicmodels" for ::1 at 2020-04-27 20:43:17 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"productlines", "primary_vals"=>"Ships", "prev_table"=>"products", "primary_columns"=>"productLine", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 775ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=king+kong" for ::1 at 2020-04-27 20:43:46 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"king kong"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5977ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=king+george" for ::1 at 2020-04-27 20:44:15 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"king george"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6170ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1323&prev_table=customers&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-27 20:44:41 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1323", "prev_table"=>"customers", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 733ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=offices&primary_vals=3&prev_table=employees&primary_columns=officeCode&db_name=classicmodels" for ::1 at 2020-04-27 20:44:43 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"offices", "primary_vals"=>"3", "prev_table"=>"employees", "primary_columns"=>"officeCode", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 759ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=abw" for ::1 at 2020-04-27 20:44:57 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"abw"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 4779ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=king+garden" for ::1 at 2020-04-27 20:45:11 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"king garden"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6102ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=strong" for ::1 at 2020-04-27 20:45:54 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"strong"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4464ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=mini+gifts" for ::1 at 2020-04-27 20:46:16 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"mini gifts"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 11173ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=mini+designs" for ::1 at 2020-04-27 20:47:00 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"mini designs"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 12677ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=gold+trim" for ::1 at 2020-04-27 20:48:06 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"gold trim"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 7176ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=productlines&primary_vals=Motorcycles&prev_table=products&primary_columns=productLine&db_name=classicmodels" for ::1 at 2020-04-27 20:49:00 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"productlines", "primary_vals"=>"Motorcycles", "prev_table"=>"products", "primary_columns"=>"productLine", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 721ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=china" for ::1 at 2020-04-27 20:50:03 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 23522ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=china" for ::1 at 2020-04-27 20:51:08 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 23173ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=fiction" for ::1 at 2020-04-27 20:51:37 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"fiction"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6081ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=reflection" for ::1 at 2020-04-27 20:52:37 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"reflection"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 53534ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=sakila&db_query=hunter+who" for ::1 at 2020-04-27 20:55:18 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"sakila", "db_query"=>"hunter who"}
+Started GET "/" for ::1 at 2020-04-27 20:56:24 -0700
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (95.9ms)
+Completed 200 OK in 505697ms (Views: 133.4ms | ActiveRecord: 0.0ms)
+
+
+Processing by DatabasesController#show as HTML
+Started GET "/" for ::1 at 2020-04-27 21:03:44 -0700
+Started GET "/query?database_name=classicmodels&db_query=china" for ::1 at 2020-04-27 21:03:44 -0700
+Processing by DatabasesController#show as HTML
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"china"}
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.6ms)
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 293ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 295ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2974ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=china" for ::1 at 2020-04-27 21:04:09 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 3143ms (Views: 170.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=china+bank" for ::1 at 2020-04-27 21:04:48 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"china bank"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4915ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=king+collectables" for ::1 at 2020-04-27 21:05:04 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"king collectables"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 10114ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=gift+depot" for ::1 at 2020-04-27 21:07:27 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"gift depot"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7654ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=gift+shop" for ::1 at 2020-04-27 21:09:27 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"gift shop"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7806ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=china" for ::1 at 2020-04-27 21:13:18 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"china"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3910ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=king+kong" for ::1 at 2020-04-27 21:14:02 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"king kong"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5831ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1621&prev_table=customers&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-27 21:14:20 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1621", "prev_table"=>"customers", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 755ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=offices&primary_vals=5&prev_table=employees&primary_columns=officeCode&db_name=classicmodels" for ::1 at 2020-04-27 21:14:22 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"offices", "primary_vals"=>"5", "prev_table"=>"employees", "primary_columns"=>"officeCode", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 750ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=japan" for ::1 at 2020-04-27 21:21:17 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"japan"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3812ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=chinese" for ::1 at 2020-04-27 21:25:26 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"chinese"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2680ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=america+west" for ::1 at 2020-04-27 21:25:34 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"america west"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5349ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1166&prev_table=customers&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-27 21:25:53 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1166", "prev_table"=>"customers", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 690ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1611&prev_table=customers&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-27 21:25:55 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1611", "prev_table"=>"customers", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 743ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=productlines&primary_vals=Planes&prev_table=products&primary_columns=productLine&db_name=classicmodels" for ::1 at 2020-04-27 21:27:20 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"productlines", "primary_vals"=>"Planes", "prev_table"=>"products", "primary_columns"=>"productLine", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 738ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-27 21:30:12 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 335ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/query?database_name=classicmodels&db_query=king+kong" for ::1 at 2020-04-27 21:33:40 -0700
+Processing by QueriesController#show as HTML
+  Parameters: {"database_name"=>"classicmodels", "db_query"=>"king kong"}
+  Rendering queries/show.html.erb within layouts/application
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 8472ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1621&prev_table=customers&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-27 21:35:11 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1621", "prev_table"=>"customers", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 792ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=offices&primary_vals=5&prev_table=employees&primary_columns=officeCode&db_name=classicmodels" for ::1 at 2020-04-27 21:35:17 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"offices", "primary_vals"=>"5", "prev_table"=>"employees", "primary_columns"=>"officeCode", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 738ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1056&prev_table=employees&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-27 21:35:23 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1056", "prev_table"=>"employees", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 796ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/table_query?table_name=employees&primary_vals=1002&prev_table=employees&primary_columns=employeeNumber&db_name=classicmodels" for ::1 at 2020-04-27 21:35:25 -0700
+Processing by TableQueriesController#show as HTML
+  Parameters: {"table_name"=>"employees", "primary_vals"=>"1002", "prev_table"=>"employees", "primary_columns"=>"employeeNumber", "db_name"=>"classicmodels"}
+  Rendering table_queries/show.html.erb within layouts/application
+  Rendered table_queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 772ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-27 21:36:39 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 522ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 19:38:20 -0700
+Processing by DatabasesController#show as HTML
+  Rendering databases/show.html.erb within layouts/application
+  Rendered databases/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 1527ms (Views: 160.1ms | ActiveRecord: 0.0ms)
+
+
